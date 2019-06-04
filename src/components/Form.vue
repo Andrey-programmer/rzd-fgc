@@ -3,25 +3,25 @@
         <v-layout align-center justify-center>
           <v-flex xs12>
             <v-card class="elevation-12">
-              <v-toolbar dark color="primary">
-                <v-toolbar-title>Форма заказа</v-toolbar-title>               
-              </v-toolbar>
-              <v-card-text>
-                <v-form ref="form" v-model="valid" lazy-validation>
-                    <v-text-field 
-                      v-for="(field, index) in form"
-                      :key="field.id"
-                       name="email"
-                      :label="field.name"
-                      :type="field.type"
-                      :rules="field.validate === 'string' ? string : field.validate === 'num'? num: req"
-                      :code="field.code"
-                      :parent="field.parent"
-                      :orderID="field.orderID"
-                      v-model="values[index]"
-                    >
-                    </v-text-field>
-                </v-form>
+                <v-toolbar dark color="primary">
+                  <v-toolbar-title>Форма заказа</v-toolbar-title>               
+                </v-toolbar>
+                <v-card-text>
+                    <v-form ref="form" v-model="valid" lazy-validation>
+                        <v-text-field 
+                          v-for="(field, index) in form"
+                          :key="field.id"
+                           name="email"
+                          :label="field.name"
+                          :type="field.type"
+                          :rules="field.validate === 'string' ? string : field.validate === 'num'? num: req"
+                          :code="field.code"
+                          :parent="field.parent"
+                          :orderID="field.orderID"
+                          v-model="values[index]"
+                        >
+                        </v-text-field>
+                    </v-form>
                 </v-card-text>
                 <v-card-actions>
                     <v-spacer></v-spacer>
